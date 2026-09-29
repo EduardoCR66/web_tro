@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encuéntranos | Tracto Rescates de Occidente</title>
+<meta name="description" content="Ubicación, mapa y redes sociales de Tracto Rescates de Occidente. Encuéntranos en Nuevo México, Jalisco.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            red: '#E30613',
+            dark: '#B0050F',
+          },
+          ink: '#17181C',
+        },
+        fontFamily: {
+          display: ['Oswald', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+        },
+        boxShadow: {
+          card: '0 10px 30px -12px rgba(23,24,28,0.25)',
+        },
+      },
+    },
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, .font-display { font-family: 'Oswald', sans-serif; }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: .1s; }
+  .reveal-delay-2 { transition-delay: .2s; }
+  .reveal-delay-3 { transition-delay: .3s; }
+
+  /* Logo mark */
+  .logo-flag { clip-path: polygon(0 0, 100% 0, 78% 100%, 0% 100%); }
+
+  /* WhatsApp pulse */
+  @keyframes wa-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,.55); }
+    70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+  .wa-pulse { animation: wa-pulse 2.4s infinite; }
+
+  .topbar-fade { animation: topbarFade 1s ease both; }
+  @keyframes topbarFade { from { opacity: 0; } to { opacity: 1; } }
+
+  ::selection { background: #E30613; color: #fff; }
+
+  /* Photo wall zoom on hover */
+  .photo-item:hover .photo-img { transform: scale(1.08); }
+  .photo-img { transition: transform .6s ease; }
+
+  /* Nav underline active */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: '';
+    position: absolute; left: 0; bottom: -4px;
+    width: 0; height: 2px; background: #E30613;
+    transition: width .3s ease;
+  }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+</style>
+</head>
+<body class="text-ink antialiased">
+
+<!-- ===================== HEADER ===================== -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="bg-gray-100/95 backdrop-blur border-b border-gray-200 topbar-fade">
+    <p class="truncate text-center text-[11px] sm:text-xs text-gray-600 py-1.5 px-4 tracking-wide">
+      Comunícate, permítenos platicarte más sobre como somos el mejor aliado para el servicio y rescate de tus flotillas.
+    </p>
+  </div>
+  <div id="nav-wrapper" class="bg-white/95 backdrop-blur transition-shadow duration-300">
+    <nav class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2 group shrink-0">
+        <div class="flex flex-col leading-none select-none">
+          <span class="font-display font-semibold text-brand-red text-[13px] sm:text-sm tracking-wide -mb-0.5">TRACTO RESCATES</span>
+          <span class="font-display font-bold text-ink text-2xl sm:text-[28px] tracking-tight">OCCIDENTE</span>
+        </div>
+        <span class="logo-flag w-3.5 h-9 sm:h-10 bg-brand-red inline-block group-hover:bg-brand-dark transition-colors"></span>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="hidden md:flex items-center gap-10 font-display text-[15px] tracking-wide">
+        <li><a href="index.html" class="nav-link pb-1">Bienvenid@</a></li>
+        <li><a href="sobre-tro.html" class="nav-link pb-1">Sobre TRO</a></li>
+        <li><a href="encuentranos.html" class="nav-link active pb-1">Encuéntranos</a></li>
+      </ul>
+
+      <!-- CTA desktop -->
+      <a href="https://wa.me/523344763563" target="_blank" rel="noopener"
+         class="hidden md:inline-flex items-center gap-2 bg-brand-red hover:bg-brand-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shadow-card">
+        Solicita tu rescate
+      </a>
+
+      <!-- Mobile toggle -->
+      <button id="menu-btn" aria-label="Abrir menú" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors">
+        <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white border-t border-gray-100">
+      <ul class="flex flex-col px-6 py-4 gap-4 font-display text-base">
+        <li><a href="index.html" class="mobile-link block py-1">Bienvenid@</a></li>
+        <li><a href="sobre-tro.html" class="mobile-link block py-1">Sobre TRO</a></li>
+        <li><a href="encuentranos.html" class="mobile-link block py-1 text-brand-red">Encuéntranos</a></li>
+        <li>
+          <a href="https://wa.me/523344763563" target="_blank" rel="noopener"
+             class="mobile-link inline-flex items-center gap-2 bg-brand-red text-white text-sm font-semibold px-5 py-2.5 rounded-full mt-1">
+            Solicita tu rescate
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== TÍTULO + MAPA ===================== -->
+<section class="bg-white pt-36 sm:pt-40 pb-20 sm:pb-24">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <h1 class="reveal font-display font-bold text-4xl sm:text-5xl text-ink mb-10">
+      Encuéntranos
+    </h1>
+
+    <div class="reveal reveal-delay-1 relative rounded-2xl overflow-hidden shadow-card border border-gray-200">
+      <iframe
+        title="Ubicación de Tracto Rescates de Occidente en el mapa"
+        src="https://www.google.com/maps?q=C.%20La%20Cardona%2015A%2C%20Marcelino%20Garc%C3%ADa%20Barrag%C3%A1n%2C%2045134%20Nuevo%20M%C3%A9xico%2C%20Jal.&output=embed"
+        class="w-full h-[380px] sm:h-[480px] lg:h-[560px] border-0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="reveal reveal-delay-2 flex flex-col sm:flex-row sm:items-center justify-between gap-6 mt-8 bg-gray-50 rounded-2xl p-6 sm:p-7">
+      <div>
+        <p class="font-display font-semibold text-ink">C. La Cardona 15A</p>
+        <p class="text-gray-600 text-sm mt-1">
+          C. La Cardona 15A, Marcelino García Barragán, 45134 Nuevo México, Jal., México
+        </p>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=C.%20La%20Cardona%2015A%2C%20Marcelino%20Garc%C3%ADa%20Barrag%C3%A1n%2C%2045134%20Nuevo%20M%C3%A9xico%2C%20Jal."
+         target="_blank" rel="noopener"
+         class="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-dark text-white font-semibold px-6 py-3 rounded-full transition-all hover:-translate-y-0.5 shadow-card shrink-0">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+        Cómo llegar
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HASHTAGS + PARED DE FOTOS ===================== -->
+<section class="bg-gray-50 py-20 sm:py-24">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="reveal text-center max-w-2xl mx-auto mb-12">
+      <p class="font-display font-semibold text-lg sm:text-xl text-ink">
+        Etiquétanos en tus post de Facebook e Instagram con los hashtag:
+      </p>
+      <p class="font-display font-bold text-brand-red text-base sm:text-lg mt-2 tracking-wide">
+        #TRO24HRS&nbsp; #SOMOSTRO&nbsp; #RESCATESTRO
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+      <button type="button" class="photo-item reveal group relative rounded-xl overflow-hidden aspect-square shadow-card">
+        <img src="assets/img/encuentranos-1.jpg" alt="Unidad de Tracto Rescates de Occidente" class="photo-img w-full h-full object-cover">
+        <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></span>
+      </button>
+      <button type="button" class="photo-item reveal reveal-delay-1 group relative rounded-xl overflow-hidden aspect-square shadow-card">
+        <img src="assets/img/encuentranos-2.jpg" alt="Flotilla de Tracto Rescates de Occidente" class="photo-img w-full h-full object-cover">
+        <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></span>
+      </button>
+      <button type="button" class="photo-item reveal reveal-delay-2 group relative rounded-xl overflow-hidden aspect-square shadow-card">
+        <img src="assets/img/encuentranos-3.jpg" alt="Taller móvil en sitio" class="photo-img w-full h-full object-cover">
+        <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></span>
+      </button>
+      <button type="button" class="photo-item reveal group relative rounded-xl overflow-hidden aspect-square shadow-card">
+        <img src="assets/img/encuentranos-4.jpg" alt="Rescate nocturno en carretera" class="photo-img w-full h-full object-cover">
+        <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></span>
+      </button>
+      <button type="button" class="photo-item reveal reveal-delay-1 group relative rounded-xl overflow-hidden aspect-square shadow-card">
+        <img src="assets/img/encuentranos-5.jpg" alt="Unidades tractocamión en patio TRO" class="photo-img w-full h-full object-cover">
+        <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></span>
+      </button>
+      <button type="button" class="photo-item reveal reveal-delay-2 group relative rounded-xl overflow-hidden aspect-square shadow-card">
+        <img src="assets/img/encuentranos-6.jpg" alt="Equipo de Tracto Rescates de Occidente" class="photo-img w-full h-full object-cover">
+        <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DESPEDIDA ===================== -->
+<section class="bg-white py-16 sm:py-20">
+  <div class="max-w-2xl mx-auto px-5 sm:px-8 text-center">
+    <p class="reveal font-display font-bold text-2xl sm:text-3xl text-ink">¡Gracias por tu visita!</p>
+    <p class="reveal reveal-delay-1 font-display font-bold text-2xl sm:text-3xl text-brand-red mt-1">¡Vuelve pronto!</p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER / CONTACTO ===================== -->
+<footer id="contacto" class="relative py-20 sm:py-24">
+  <div class="absolute inset-0">
+    <img src="assets/img/footer-bg.jpg" alt="Unidades Tracto Rescates de Occidente" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black/80"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
+
+      <div class="reveal">
+        <h3 class="font-display font-semibold text-white text-lg mb-4">Domicilio</h3>
+        <p class="text-gray-300 leading-relaxed">
+          C. La Cardona 15A, Marcelino García Barragán,<br>
+          45134 Nuevo México, Jal.
+        </p>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <h3 class="font-display font-semibold text-white text-lg mb-4">Contactos</h3>
+        <p class="text-gray-300 leading-relaxed">
+          <a href="tel:+523344763563" class="hover:text-brand-red transition-colors">33-44-76-35-63</a><br>
+          <a href="mailto:controltro@tractorescatesdeoccidente.com" class="hover:text-brand-red transition-colors break-all">
+            controltro@tractorescatesdeoccidente.com
+          </a>
+        </p>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <h3 class="font-display font-semibold text-white text-lg mb-4">Síguenos</h3>
+        <div class="flex gap-4">
+          <a href="#" aria-label="Facebook" class="w-11 h-11 rounded-full bg-white/10 hover:bg-brand-red flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 9H15V6.5h-1.5C11.6 6.5 10 8.1 10 10.2V12H8.5v2.5H10V21h2.5v-6.5H14l.5-2.5h-2V10.2c0-.7.5-1.2 1-1.2z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="w-11 h-11 rounded-full bg-white/10 hover:bg-brand-red flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.2"/><circle cx="16.2" cy="7.8" r="0.6" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/15 mt-14 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="font-display font-semibold text-brand-red text-[11px] tracking-wide">TRACTO RESCATES</span>
+        <span class="font-display font-bold text-white text-lg -ml-1">OCCIDENTE</span>
+      </div>
+      <p class="text-gray-400 text-xs">© 2026 Tracto Rescates de Occidente. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== WHATSAPP FLOTANTE ===================== -->
+<a href="https://wa.me/523344763563" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"
+   class="wa-pulse fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1ebe5b] flex items-center justify-center shadow-lg transition-colors">
+  <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.28-1.38a9.9 9.9 0 0 0 4.71 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.22 8.22 0 0 1-1.27-4.36c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.42 5.82c0 4.55-3.7 8.24-8.25 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.66-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.24-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31s-.87.86-.87 2.09.89 2.43 1.02 2.6c.12.17 1.75 2.68 4.25 3.75.59.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/>
+  </svg>
+</a>
+
+<script>
+  // Header shadow on scroll
+  const nav = document.getElementById('nav-wrapper');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('shadow-md', window.scrollY > 12);
+  });
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  let menuOpen = false;
+
+  function setMenu(open) {
+    menuOpen = open;
+    mobileMenu.style.maxHeight = open ? mobileMenu.scrollHeight + 'px' : '0px';
+    iconOpen.classList.toggle('hidden', open);
+    iconClose.classList.toggle('hidden', !open);
+  }
+  menuBtn.addEventListener('click', () => setMenu(!menuOpen));
+  document.querySelectorAll('.mobile-link').forEach(el => el.addEventListener('click', () => setMenu(false)));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>

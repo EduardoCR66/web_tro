@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tracto Rescates de Occidente | Rescate y Reparación de Tractocamiones</title>
+<meta name="description" content="Tracto Rescates de Occidente: tu aliado número uno en rescates y reparación de tractocamiones en carretera. Servicio 24 horas en todo occidente.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            red: '#E30613',
+            dark: '#B0050F',
+          },
+          ink: '#17181C',
+        },
+        fontFamily: {
+          display: ['Oswald', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+        },
+        boxShadow: {
+          card: '0 10px 30px -12px rgba(23,24,28,0.25)',
+        },
+      },
+    },
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, .font-display { font-family: 'Oswald', sans-serif; }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: .1s; }
+  .reveal-delay-2 { transition-delay: .2s; }
+  .reveal-delay-3 { transition-delay: .3s; }
+  .reveal-delay-4 { transition-delay: .4s; }
+  .reveal-delay-5 { transition-delay: .5s; }
+
+  /* Logo mark */
+  .logo-flag { clip-path: polygon(0 0, 100% 0, 78% 100%, 0% 100%); }
+
+  /* Hero heading underline accent */
+  .accent-underline { position: relative; }
+  .accent-underline::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -6px;
+    width: 64px; height: 4px;
+    background: #E30613;
+    border-radius: 2px;
+  }
+
+  /* WhatsApp pulse */
+  @keyframes wa-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,.55); }
+    70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+  .wa-pulse { animation: wa-pulse 2.4s infinite; }
+
+  /* Marquee-ish subtle fade for top bar */
+  .topbar-fade { animation: topbarFade 1s ease both; }
+  @keyframes topbarFade { from { opacity: 0; } to { opacity: 1; } }
+
+  .stat-number { font-variant-numeric: tabular-nums; }
+
+  ::selection { background: #E30613; color: #fff; }
+
+  /* Card image zoom on hover */
+  .service-card:hover .service-img { transform: scale(1.08); }
+  .service-img { transition: transform .6s ease; }
+
+  /* Nav underline active */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: '';
+    position: absolute; left: 0; bottom: -4px;
+    width: 0; height: 2px; background: #E30613;
+    transition: width .3s ease;
+  }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+</style>
+</head>
+<body class="text-ink antialiased">
+
+<!-- ===================== HEADER ===================== -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="bg-gray-100/95 backdrop-blur border-b border-gray-200 topbar-fade">
+    <p class="truncate text-center text-[11px] sm:text-xs text-gray-600 py-1.5 px-4 tracking-wide">
+      Comunícate, permítenos platicarte más sobre como somos el mejor aliado para el servicio y rescate de tus flotillas.
+    </p>
+  </div>
+  <div id="nav-wrapper" class="bg-white/95 backdrop-blur transition-shadow duration-300">
+    <nav class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="#inicio" class="flex items-center gap-2 group shrink-0">
+        <div class="flex flex-col leading-none select-none">
+          <span class="font-display font-semibold text-brand-red text-[13px] sm:text-sm tracking-wide -mb-0.5">TRACTO RESCATES</span>
+          <span class="font-display font-bold text-ink text-2xl sm:text-[28px] tracking-tight">OCCIDENTE</span>
+        </div>
+        <span class="logo-flag w-3.5 h-9 sm:h-10 bg-brand-red inline-block group-hover:bg-brand-dark transition-colors"></span>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="hidden md:flex items-center gap-10 font-display text-[15px] tracking-wide">
+        <li><a href="#inicio" class="nav-link active pb-1">Bienvenid@</a></li>
+        <li><a href="sobre-tro.html" class="nav-link pb-1">Sobre TRO</a></li>
+        <li><a href="encuentranos.html" class="nav-link pb-1">Encuéntranos</a></li>
+      </ul>
+
+      <!-- CTA desktop -->
+      <a href="https://wa.me/523344763563" target="_blank" rel="noopener"
+         class="hidden md:inline-flex items-center gap-2 bg-brand-red hover:bg-brand-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shadow-card">
+        Solicita tu rescate
+      </a>
+
+      <!-- Mobile toggle -->
+      <button id="menu-btn" aria-label="Abrir menú" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors">
+        <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white border-t border-gray-100">
+      <ul class="flex flex-col px-6 py-4 gap-4 font-display text-base">
+        <li><a href="#inicio" class="mobile-link block py-1">Bienvenid@</a></li>
+        <li><a href="sobre-tro.html" class="mobile-link block py-1">Sobre TRO</a></li>
+        <li><a href="encuentranos.html" class="mobile-link block py-1">Encuéntranos</a></li>
+        <li>
+          <a href="https://wa.me/523344763563" target="_blank" rel="noopener"
+             class="mobile-link inline-flex items-center gap-2 bg-brand-red text-white text-sm font-semibold px-5 py-2.5 rounded-full mt-1">
+            Solicita tu rescate
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section id="inicio" class="relative min-h-screen flex items-end">
+  <div class="absolute inset-0">
+    <img src="assets/img/hero-rescate.jpg" alt="Unidad de Tracto Rescates de Occidente en sitio" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/30"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-8 pb-20 sm:pb-28 pt-40">
+    <p class="reveal text-white/80 font-display tracking-[0.25em] text-xs sm:text-sm uppercase mb-5">
+      Rescate y mantenimiento diésel · Occidente de México
+    </p>
+    <h1 class="reveal reveal-delay-1 text-white font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.08] max-w-4xl">
+      Tracto Rescates de Occidente, tu aliado número uno en rescates y reparación de tractocamiones en carretera.
+    </h1>
+    <p class="reveal reveal-delay-2 text-white/90 text-xl sm:text-2xl font-display mt-7">
+      De héroes para héroes.
+    </p>
+
+    <div class="reveal reveal-delay-3 flex flex-wrap gap-4 mt-9">
+      <a href="https://wa.me/523344763563" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-dark text-white font-semibold px-7 py-3.5 rounded-full transition-all hover:-translate-y-0.5 shadow-card">
+        Solicita tu rescate ahora
+      </a>
+      <a href="#bienvenidos"
+         class="inline-flex items-center gap-2 border border-white/40 text-white font-semibold px-7 py-3.5 rounded-full hover:bg-white/10 transition-colors">
+        Conócenos
+      </a>
+    </div>
+  </div>
+
+  <!-- scroll cue -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2 text-white/70">
+    <span class="text-[10px] tracking-[0.3em] uppercase">Descubre más</span>
+    <svg class="w-4 h-4 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+</section>
+
+<!-- ===================== BIENVENIDOS ===================== -->
+<section id="bienvenidos" class="bg-white py-24 sm:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+
+    <h2 class="reveal font-display font-bold text-3xl sm:text-4xl lg:text-[42px] leading-tight text-ink accent-underline pb-4">
+      "Tu mejor aliado en el mantenimiento de tracto camiones diésel en occidente"
+    </h2>
+
+    <div class="reveal reveal-delay-1">
+      <p class="font-display font-semibold text-lg text-ink mb-4">¡Bienvenidos y bienvenidas a TRO!</p>
+      <p class="text-gray-600 leading-relaxed">
+        Desde 2017, nuestro equipo de técnicos diésel certificados ofrece atención las 24 horas, con refacciones y
+        servicios especializados. Lo que comenzó como un sueño hoy es una empresa consolidada con un equipo de
+        profesionales dedicados a brindar un servicio excepcional y mantener su maquinaria en óptimas condiciones.
+        ¡Confía en nosotros para cuidar de tu equipo pesado con la máxima calidad y profesionalismo!
+      </p>
+
+      <div class="grid grid-cols-2 gap-6 sm:gap-8 mt-10">
+        <div>
+          <p class="font-display font-bold text-3xl sm:text-5xl text-brand-red">
+            <span class="stat-number" data-target="5100" data-suffix="+">0</span>
+          </p>
+          <p class="text-gray-500 text-sm mt-2 leading-snug">
+            Servicios excepcionales concretados en nuestra historia, trayectoria y experiencia nos respaldan.
+          </p>
+        </div>
+        <div>
+          <p class="font-display font-bold text-3xl sm:text-5xl text-brand-red">
+            <span class="stat-number" data-target="15">0</span>
+          </p>
+          <p class="text-gray-500 text-sm mt-2 leading-snug">
+            Profesionales al servicio con honestidad y corazón. (y pronto seremos muchos más).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICIOS ===================== -->
+<section id="servicios" class="bg-gray-50 py-24 sm:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="reveal font-display font-bold text-3xl sm:text-4xl lg:text-[42px] text-ink">
+        Conoce sobre nuestros servicios
+      </h2>
+      <p class="reveal reveal-delay-1 text-gray-500 mt-5 leading-relaxed">
+        Contamos con hasta 50 servicios de reparación, mantenimiento y rescate carretero para unidades de tractocamiones.
+      </p>
+      <p class="reveal reveal-delay-2 text-gray-500 mt-3 italic">
+        Cubrimos todo occidente… y más allá.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <article class="service-card reveal group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-shadow duration-300">
+        <div class="h-56 overflow-hidden">
+          <img src="assets/img/servicio-motor.jpg" alt="Reparación general de motor" class="service-img w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="font-display font-semibold text-lg text-ink">Reparación General de Motor</h3>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+            Restauramos y optimizamos el rendimiento del motor de tus tractocamiones.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="service-card reveal reveal-delay-1 group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-shadow duration-300">
+        <div class="h-56 overflow-hidden">
+          <img src="assets/img/servicio-carretero.jpg" alt="Rescate carretero intenso" class="service-img w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="font-display font-semibold text-lg text-ink">Rescate Carretero Intenso</h3>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+            Asistencia rápida y efectiva para tractocamiones en situaciones de emergencia en carretera.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="service-card reveal reveal-delay-2 group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-shadow duration-300">
+        <div class="h-56 overflow-hidden">
+          <img src="assets/img/servicio-taller-movil.jpg" alt="Taller móvil 24 horas" class="service-img w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="font-display font-semibold text-lg text-ink">Taller Móvil 24 Hrs</h3>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+            Unidades móviles equipadas listas para atenderte donde estés, a cualquier hora.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="service-card reveal group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-shadow duration-300">
+        <div class="h-56 overflow-hidden">
+          <img src="assets/img/servicio-flotillas.jpg" alt="Atención a flotillas" class="service-img w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="font-display font-semibold text-lg text-ink">Atención a Flotillas</h3>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+            Programas de mantenimiento integral para flotillas completas de tractocamiones.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="service-card reveal reveal-delay-1 group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-shadow duration-300">
+        <div class="h-56 overflow-hidden">
+          <img src="assets/img/servicio-mantenimiento.jpg" alt="Mantenimiento preventivo" class="service-img w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="font-display font-semibold text-lg text-ink">Mantenimiento Preventivo</h3>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+            Revisiones programadas que evitan fallas y alargan la vida útil de tu unidad.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="service-card reveal reveal-delay-2 group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-shadow duration-300">
+        <div class="h-56 overflow-hidden">
+          <img src="assets/img/servicio-nocturno.jpg" alt="Rescate nocturno 24 horas" class="service-img w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="font-display font-semibold text-lg text-ink">Rescate Nocturno</h3>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+            Cobertura total las 24 horas, los 365 días del año, sin importar la hora.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER / CONTACTO ===================== -->
+<footer id="contacto" class="relative py-20 sm:py-24">
+  <div class="absolute inset-0">
+    <img src="assets/img/footer-bg.jpg" alt="Unidades Tracto Rescates de Occidente" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black/80"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
+
+      <div class="reveal">
+        <h3 class="font-display font-semibold text-white text-lg mb-4">Domicilio</h3>
+        <p class="text-gray-300 leading-relaxed">
+          C. La Cardona 15A, Marcelino García Barragán,<br>
+          45134 Nuevo México, Jal.
+        </p>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <h3 class="font-display font-semibold text-white text-lg mb-4">Contactos</h3>
+        <p class="text-gray-300 leading-relaxed">
+          <a href="tel:+523344763563" class="hover:text-brand-red transition-colors">33-44-76-35-63</a><br>
+          <a href="mailto:controltro@tractorescatesdeoccidente.com" class="hover:text-brand-red transition-colors break-all">
+            controltro@tractorescatesdeoccidente.com
+          </a>
+        </p>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <h3 class="font-display font-semibold text-white text-lg mb-4">Síguenos</h3>
+        <div class="flex gap-4">
+          <a href="#" aria-label="Facebook" class="w-11 h-11 rounded-full bg-white/10 hover:bg-brand-red flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 9H15V6.5h-1.5C11.6 6.5 10 8.1 10 10.2V12H8.5v2.5H10V21h2.5v-6.5H14l.5-2.5h-2V10.2c0-.7.5-1.2 1-1.2z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="w-11 h-11 rounded-full bg-white/10 hover:bg-brand-red flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.2"/><circle cx="16.2" cy="7.8" r="0.6" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/15 mt-14 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="font-display font-semibold text-brand-red text-[11px] tracking-wide">TRACTO RESCATES</span>
+        <span class="font-display font-bold text-white text-lg -ml-1">OCCIDENTE</span>
+      </div>
+      <p class="text-gray-400 text-xs">© 2026 Tracto Rescates de Occidente. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== WHATSAPP FLOTANTE ===================== -->
+<a href="https://wa.me/523344763563" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"
+   class="wa-pulse fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1ebe5b] flex items-center justify-center shadow-lg transition-colors">
+  <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.28-1.38a9.9 9.9 0 0 0 4.71 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.22 8.22 0 0 1-1.27-4.36c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.42 5.82c0 4.55-3.7 8.24-8.25 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.66-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.24-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31s-.87.86-.87 2.09.89 2.43 1.02 2.6c.12.17 1.75 2.68 4.25 3.75.59.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/>
+  </svg>
+</a>
+
+<script>
+  // Header shadow on scroll
+  const nav = document.getElementById('nav-wrapper');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('shadow-md', window.scrollY > 12);
+  });
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  let menuOpen = false;
+
+  function setMenu(open) {
+    menuOpen = open;
+    mobileMenu.style.maxHeight = open ? mobileMenu.scrollHeight + 'px' : '0px';
+    iconOpen.classList.toggle('hidden', open);
+    iconClose.classList.toggle('hidden', !open);
+  }
+  menuBtn.addEventListener('click', () => setMenu(!menuOpen));
+  document.querySelectorAll('.mobile-link').forEach(el => el.addEventListener('click', () => setMenu(false)));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // Counter animation
+  const counters = document.querySelectorAll('.stat-number');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1600;
+      const start = performance.now();
+
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.floor(eased * target);
+        el.textContent = (target >= 1000 ? (value / 1000).toFixed(1) + 'k' : value) + (progress === 1 ? suffix : (target >= 1000 ? '' : ''));
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = (target >= 1000 ? (target / 1000).toFixed(1) + 'k' : target) + suffix;
+      }
+      requestAnimationFrame(tick);
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(el => counterObserver.observe(el));
+
+  // Active nav link on scroll
+  const sections = ['inicio'].map(id => document.getElementById(id));
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const match = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (match) match.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => s && navObserver.observe(s));
+</script>
+
+</body>
+</html>
