@@ -48,6 +48,15 @@
   .reveal-delay-4 { transition-delay: .4s; }
   .reveal-delay-5 { transition-delay: .5s; }
 
+  /* Image reveal: rises from below with a blur-to-sharp finish */
+  .reveal-image {
+    opacity: 0;
+    transform: translateY(64px);
+    filter: blur(14px);
+    transition: opacity 1s ease, transform 1s ease, filter 1.1s ease;
+  }
+  .reveal-image.is-visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+
   /* Logo mark */
   .logo-flag { clip-path: polygon(0 0, 100% 0, 78% 100%, 0% 100%); }
 
@@ -151,24 +160,23 @@
 </header>
 
 <!-- ===================== HERO ===================== -->
-<section id="inicio" class="relative min-h-screen flex items-end">
-  <div class="absolute inset-0">
-    <img src="assets/img/hero-rescate.jpg" alt="Unidad de Tracto Rescates de Occidente en sitio" class="w-full h-full object-cover">
+<section id="inicio" class="relative h-screen">
+  <!-- Fondo fijo: no se desplaza con el scroll -->
+  <div class="fixed inset-0 -z-10">
+    <img src="assets/img/hero-rescate.jpg" alt="Unidad de Tracto Rescates de Occidente en sitio" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/30"></div>
   </div>
 
-  <div class="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-8 pb-20 sm:pb-28 pt-40">
-    <p class="reveal text-white/80 font-display tracking-[0.25em] text-xs sm:text-sm uppercase mb-5">
-      Rescate y mantenimiento diésel · Occidente de México
-    </p>
-    <h1 class="reveal reveal-delay-1 text-white font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.08] max-w-4xl">
+  <!-- Contenido normal: se desplaza con el scroll como el resto de la página -->
+  <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-5 sm:px-8 pt-16">
+    <h1 class="reveal text-white font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[1.08] max-w-5xl">
       Tracto Rescates de Occidente, tu aliado número uno en rescates y reparación de tractocamiones en carretera.
     </h1>
-    <p class="reveal reveal-delay-2 text-white/90 text-xl sm:text-2xl font-display mt-7">
+    <p class="reveal reveal-delay-1 text-white/90 text-2xl sm:text-3xl font-display mt-8">
       De héroes para héroes.
     </p>
 
-    <div class="reveal reveal-delay-3 flex flex-wrap gap-4 mt-9">
+    <div class="reveal reveal-delay-2 flex flex-wrap justify-center gap-4 mt-10">
       <a href="https://wa.me/523344763563" target="_blank" rel="noopener"
          class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-dark text-white font-semibold px-7 py-3.5 rounded-full transition-all hover:-translate-y-0.5 shadow-card">
         Solicita tu rescate ahora
@@ -222,6 +230,15 @@
           </p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== IMAGEN DESTACADA ===================== -->
+<section class="bg-white pb-24 sm:pb-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="reveal-image rounded-2xl overflow-hidden shadow-card">
+      <img src="assets/img/equipo-destacado.jpg" alt="Equipo de Tracto Rescates de Occidente" class="w-full h-auto object-cover">
     </div>
   </div>
 </section>
@@ -408,7 +425,7 @@
   document.querySelectorAll('.mobile-link').forEach(el => el.addEventListener('click', () => setMenu(false)));
 
   // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
+  const revealEls = document.querySelectorAll('.reveal, .reveal-image');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
