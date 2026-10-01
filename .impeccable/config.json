@@ -1,0 +1,32 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-01T03:24:46.799Z",
+        "reason": "Inter+Oswald is the established, user-approved design system font pairing for this site across all pages; not a regression"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-01T03:24:46.895Z",
+        "reason": "Manually inspected all rounded/shadow containers (service cards, image reveal); no card nested inside another card, flat cards in a grid on a plain background"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "sobre-tro.html"
+        ],
+        "createdAt": "2026-10-01T03:24:47.004Z",
+        "reason": "Manually inspected all rounded/shadow containers (team photo, gallery tiles); no card nested inside another card, flat tiles in a grid on a plain background"
+      }
+    ]
+  }
+}
