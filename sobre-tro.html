@@ -154,8 +154,9 @@
 
 <!-- ===================== HERO: CONECTA CON NUESTRA MANERA DE TRABAJAR ===================== -->
 <section class="relative min-h-[420px] sm:min-h-[480px] flex items-center pt-48">
-  <div class="absolute inset-0">
-    <img src="assets/img/about-hero.jpg" alt="Equipo de Tracto Rescates de Occidente" class="w-full h-full object-cover">
+  <!-- Fondo fijo: no se desplaza con el scroll -->
+  <div class="fixed inset-0 -z-10">
+    <img src="assets/img/img4.jpeg" alt="Equipo de Tracto Rescates de Occidente" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-black/60"></div>
   </div>
 
@@ -198,9 +199,9 @@
 
 <!-- ===================== VALORES + EQUIPO ===================== -->
 <section class="bg-gray-50 py-24 sm:py-28">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-stretch">
 
-    <div class="reveal rounded-2xl overflow-hidden shadow-card">
+    <div class="reveal rounded-2xl overflow-hidden shadow-card h-full">
       <img src="assets/img/about-team.jpg" alt="Equipo completo de Tracto Rescates de Occidente" class="w-full h-full object-cover">
     </div>
 
@@ -209,7 +210,7 @@
         Valores que nos caracterizan
       </h3>
 
-      <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-5">
+      <ul class="grid gap-y-5">
         <li class="flex items-center gap-3">
           <span class="w-2 h-2 rounded-full bg-brand-red shrink-0"></span>
           <span class="text-gray-700 font-medium">Espíritu de servicio</span>
@@ -328,7 +329,7 @@
 <!-- ===================== FOOTER / CONTACTO ===================== -->
 <footer id="contacto" class="relative py-20 sm:py-24">
   <div class="absolute inset-0">
-    <img src="assets/img/footer-bg.jpg" alt="Unidades Tracto Rescates de Occidente" class="w-full h-full object-cover">
+    <img src="assets/img/footer.jpeg" alt="Unidades Tracto Rescates de Occidente" class="w-full h-full object-cover">
     <div class="absolute inset-0 bg-black/80"></div>
   </div>
 
@@ -336,16 +337,16 @@
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
 
       <div class="reveal">
-        <h3 class="font-display font-semibold text-white text-lg mb-4">Domicilio</h3>
-        <p class="text-gray-300 leading-relaxed">
+        <h3 class="font-display font-semibold text-white text-xl sm:text-2xl mb-4">Domicilio</h3>
+        <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
           C. La Cardona 15A, Marcelino García Barragán,<br>
           45134 Nuevo México, Jal.
         </p>
       </div>
 
       <div class="reveal reveal-delay-1">
-        <h3 class="font-display font-semibold text-white text-lg mb-4">Contactos</h3>
-        <p class="text-gray-300 leading-relaxed">
+        <h3 class="font-display font-semibold text-white text-xl sm:text-2xl mb-4">Contactos</h3>
+        <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
           <a href="tel:+523344763563" class="hover:text-brand-red transition-colors">33-44-76-35-63</a><br>
           <a href="mailto:controltro@tractorescatesdeoccidente.com" class="hover:text-brand-red transition-colors break-all">
             controltro@tractorescatesdeoccidente.com
@@ -354,7 +355,7 @@
       </div>
 
       <div class="reveal reveal-delay-2">
-        <h3 class="font-display font-semibold text-white text-lg mb-4">Síguenos</h3>
+        <h3 class="font-display font-semibold text-white text-xl sm:text-2xl mb-4">Síguenos</h3>
         <div class="flex gap-4">
           <a href="#" aria-label="Facebook" class="w-11 h-11 rounded-full bg-white/10 hover:bg-brand-red flex items-center justify-center transition-colors">
             <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 9H15V6.5h-1.5C11.6 6.5 10 8.1 10 10.2V12H8.5v2.5H10V21h2.5v-6.5H14l.5-2.5h-2V10.2c0-.7.5-1.2 1-1.2z"/></svg>
@@ -364,14 +365,6 @@
           </a>
         </div>
       </div>
-    </div>
-
-    <div class="border-t border-white/15 mt-14 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <div class="flex items-center gap-2">
-        <span class="font-display font-semibold text-brand-red text-[11px] tracking-wide">TRACTO RESCATES</span>
-        <span class="font-display font-bold text-white text-lg -ml-1">OCCIDENTE</span>
-      </div>
-      <p class="text-gray-400 text-xs">© 2026 Tracto Rescates de Occidente. Todos los derechos reservados.</p>
     </div>
   </div>
 </footer>

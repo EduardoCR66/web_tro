@@ -26,6 +26,24 @@
         ],
         "createdAt": "2026-10-01T03:24:47.004Z",
         "reason": "Manually inspected all rounded/shadow containers (team photo, gallery tiles); no card nested inside another card, flat tiles in a grid on a plain background"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "sobre-tro.html"
+        ],
+        "createdAt": "2026-10-01T03:31:13.857Z",
+        "reason": "lightbox <img id=lightbox-img> is intentionally empty until JS sets src on gallery click; not a broken image"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "encuentranos.html"
+        ],
+        "createdAt": "2026-10-01T03:57:22.929Z",
+        "reason": "The only nesting is a pill CTA button (rounded-full, shadow-card) inside the address card (bg-gray-50 rounded-2xl); a button is not a nested card"
       }
     ]
   }
