@@ -4,9 +4,18 @@
     "ignoreFiles": [],
     "ignoreValues": [
       {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "sobre-tro.html"
+        ],
+        "createdAt": "2026-10-01T04:05:47.892Z",
+        "reason": "lightbox <img id=lightbox-img> is intentionally empty until JS sets src on gallery click; not a broken image"
+      },
+      {
         "rule": "overused-font",
         "value": "inter",
-        "createdAt": "2026-10-01T03:24:46.799Z",
+        "createdAt": "2026-10-01T04:06:37.115Z",
         "reason": "Inter+Oswald is the established, user-approved design system font pairing for this site across all pages; not a regression"
       },
       {
@@ -15,7 +24,7 @@
         "files": [
           "index.html"
         ],
-        "createdAt": "2026-10-01T03:24:46.895Z",
+        "createdAt": "2026-10-01T04:06:37.223Z",
         "reason": "Manually inspected all rounded/shadow containers (service cards, image reveal); no card nested inside another card, flat cards in a grid on a plain background"
       },
       {
@@ -24,17 +33,8 @@
         "files": [
           "sobre-tro.html"
         ],
-        "createdAt": "2026-10-01T03:24:47.004Z",
+        "createdAt": "2026-10-01T04:06:37.327Z",
         "reason": "Manually inspected all rounded/shadow containers (team photo, gallery tiles); no card nested inside another card, flat tiles in a grid on a plain background"
-      },
-      {
-        "rule": "broken-image",
-        "value": "*",
-        "files": [
-          "sobre-tro.html"
-        ],
-        "createdAt": "2026-10-01T03:31:13.857Z",
-        "reason": "lightbox <img id=lightbox-img> is intentionally empty until JS sets src on gallery click; not a broken image"
       },
       {
         "rule": "nested-cards",
@@ -42,7 +42,7 @@
         "files": [
           "encuentranos.html"
         ],
-        "createdAt": "2026-10-01T03:57:22.929Z",
+        "createdAt": "2026-10-01T04:06:37.432Z",
         "reason": "The only nesting is a pill CTA button (rounded-full, shadow-card) inside the address card (bg-gray-50 rounded-2xl); a button is not a nested card"
       }
     ]
